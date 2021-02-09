@@ -1,0 +1,30 @@
+
+<%- include("partials/header"); -%>
+<div >
+  <h1>Home</h1>
+
+  <p class ="welcome"> <%= startingContent %> </p>
+   <p >We hope our posts can make a significant contribution in the field of education and make it more enjoyable.</p>
+   <p>Has this ever happened to you? While researching an important paper, you come across an online journal database that claims to connect academics to high-quality peer-reviewed research. Intrigued, you search for keywords related to your topic, only to discover that you must pay a hefty subscription fee to access the service.</p>
+<p>Subscription fees and paywalls are often the bane of students and academics, especially those at small institutions who don't have access to many article directories and repositories.
+
+Whether you're working on an undergraduate paper, a PhD dissertation, or a medical research study, we want to help you find tools to locate and access the information you need to produce well-researched, compelling, and innovative writing.</p>
+
+</div>
+
+ <a class="btn btn-info comp" href="compose">Compose a New Post</a>
+  <%  posts.forEach(function(post){ %>
+
+    <h1><%=post.title%></h1>
+    <p>
+    <%=post.content.substring(0, 300) + " ..."%>
+
+    <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+
+
+    <% }) %>
+
+  <a class="btn btn-info comp" href="/">Move to top</a>
+
+<%- include("partials/footer"); -%>
